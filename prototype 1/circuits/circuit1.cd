@@ -1,0 +1,59 @@
+// Eingerückt wird mit tab oder 4 leerzeichen
+//
+// Typ:
+// R/r = resistor
+// S/s = series connection
+// P/p = parallel
+//
+//
+// {name}, {Typ}
+//     U: {Spannung}
+//     R: {Widerstand}
+//     I: {Stromstärke}
+// {namen aller zugehörigen Komponenten getrennt von einem Umbruch}
+//
+Uges, S
+    U: -1
+    R: -1
+    I: -1
+U123
+U5
+U6
+
+U123, P
+    U: -1
+    R: -1
+    I: -1
+U1
+U2
+U3
+
+U1, R
+    U: -1
+    R: -1
+    I: -1
+
+U2, R
+    U: -1
+    R: -1
+    I: -1
+
+U3, R
+    U: -1
+    R: -1
+    I: -1
+
+U4, R
+    U: -1
+    R: -1
+    I: -1
+
+U5, R
+    U: -1
+    R: -1
+    I: -1
+
+U6, R
+    U: -1
+    R: -1
+    I: -1
