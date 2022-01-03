@@ -1,6 +1,8 @@
 # physik_schaltkreise
 Ein "simmulationsprogramm" um die Fehlenden Werte einer Schaltung aus Widerständen mithilfe des Omschen Gesetztes, der Ketten- und Machenregel zu berechnen.
 
+Die Projektseite ist hier: https://ln.topdf.de/physik/
+
 Die Datei, die die Schaltkreise beschreibt, muss wievolgt aufgebaut sein:
 ```
 // Eingerückt wird mit tab oder 4 leerzeichen
