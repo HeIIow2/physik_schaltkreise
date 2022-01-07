@@ -1,0 +1,129 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Schaltpläne</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<header>
+    <h1>Schaltpläne</h1>
+    <a href="https://github.com/HeIIow2/physik_schaltkreise">GitHub</a>
+    <a href="#Downloads">Downloads</a>
+
+
+    <button onclick="toggle()" class="push">Theme</button>
+</header>
+
+<div class="container" id="überblick">
+    <div class="textbox">
+        <h1>Überblick</h1>
+        <img src="assets/screenshots/screen1.png" class="half">
+        <img src="assets/screenshots/screen2.png" class="half">
+        <img src="assets/screenshots/screen3.png" class="max">
+
+        <p>
+            Bei diesem Projekt, geht es darum, Schaltpläne von komplex verschachtelten Schaltungen von Widerständen zu
+            zeichnen,
+            und dann mit nur einer handvoll bzw. alle nötigen Werten (Widerstand, Spannung und Stromstärke), diese Werte
+            für
+            alle Widerstände und Teilwiderstände zu berechnen.
+        </p>
+        <p>
+            Genutzt habe ich dafür:
+        <ul>
+            <li>Python als Skriptsprache</li>
+            <li>Schemdraw um ein svg des Schaltplans zu erzeugen</li>
+            <li>Tkinter als UI-Framework</li>
+        </ul>
+        </p>
+        <p>
+            Der Source Code ist Open Source und auf <a href="https://github.com/HeIIow2/physik_schaltkreise">GitHub</a>
+            zu
+            finden, und ein Download zum Program kann man <a href="#Downloads">hier</a> finden.
+        </p>
+        <p>
+            Eingegeben wird der Schaltplan entweder Links in dem Eingabefeld, oder in einer Externen Datei.
+            In der Datei werden für jedes Element die Art des Elements, die Werte des Elements und die verbindungen des
+            Elements angegeben.
+            Genaueres dazu <a href="#Eingabe">hier</a>.
+        </p>
+    </div>
+</div>
+
+<div class="container" id="Eingabe">
+    <div class="textbox">
+        <h1>Eingabe des Schaltkreises</h1>
+
+        <p>
+            Jede Widerstandschaltung kann als Datenbaum repräsentiert werden. Das heißt ein Netzwerk aus vielen
+            Elementen
+            (Nodes) die alle miteinander verbunden sind. Dies ermöglicht es einem einfach jedes Element einzeln angeben,
+            und für jedes
+            Element sagen, mit welchem dieses verbunden ist.
+        </p>
+        <p>
+        <ul>
+            <li>mit "//" Kommentiert man, das heißt mein Program ignoriert diese Zeile.</li>
+            <li>Die Elemente werden jeweils durch eine leere Zeile abgetrennt.</li>
+            <li>
+                In der ersten Zeile des Elements kommt durch ein "," getrennt zuerst der Name des Elements, und dann die
+                Art des Elements.
+                Die Art kann entweder: P (Parallelschaltung), S (Reihenschaltung) oder R (Widerstand) sein
+            </li>
+            <li>
+                In den nächsten Zeilen definiert man, mit Tab oder 4 Spaces eingerückt, die Werte des Elements
+                (optional).
+                Wobei: "U: {Spannung}", "R: {Widerstand}" und "I: {Stromstärke}".
+            </li>
+            <li>In den nächsten Zeilen schreibt man alle Namen der Elemente, die sich in diesem Element sind. Pro zeile
+                ein Name.
+            </li>
+            <li>Widerstände die keine Werte haben müssen nicht angegeben werden, alles andere schon.</li>
+        </ul>
+        </p>
+        <p>
+            Eine Beispielschaltung:
+        </p>
+        <div>
+        <pre class="elevated secondary">
+Rges, S
+    U: 24
+R1
+R23
+
+R23, P
+R2
+R3
+
+R2, R
+    R: 40
+
+R3, R
+    R: 60
+    I: 0.3
+        </pre>
+        <img src="assets/circuit3.svg" class="half">
+        </div>
+    </div>
+</div>
+
+<div class="container" id="Downloads">
+    <div class="textbox">
+        <h1>Downloads</h1>
+        <p><a>Windows</a></p>
+        <p><a href="https://github.com/HeIIow2/physik_schaltkreise">Source Code</a></p>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
