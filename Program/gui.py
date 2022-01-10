@@ -53,6 +53,7 @@ class InputFrame:
         self.file_name = file.name
         self.set_text()
         self.string = file.read()
+        self.text.delete('1.0', tk.END)
         self.text.insert(tk.END, self.string)
 
     def calculate(self):
@@ -80,6 +81,7 @@ class InputFrame:
 
         self.schematic.config(image=self.tk_img)
         self.output_text.configure(state='normal')
+        self.output_text.delete('1.0', tk.END)
         self.output_text.insert(tk.END, circuit.output)
         self.output_text.configure(state='disabled')
 

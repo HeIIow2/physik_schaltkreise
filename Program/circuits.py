@@ -32,6 +32,7 @@ Iges = I1 + I2 ...
 Imperativ verschachtelte Programmierung
 '''
 
+import matplotlib.backends.backend_tkagg
 import matplotlib
 matplotlib.use('Agg')
 import schemdraw
