@@ -23,6 +23,33 @@ html body {
 	background-color: var(--bg-color);
 }
 
+#copyright {
+    position: fixed;
+    bottom: 0;
+    right: 1px;
+	color: var(--main-text-color);
+}
+
+#popup-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+}
+
+#popup {
+    height: 100px;
+
+    transition: transform 1s;
+}
+
+.hide {
+    transform: translateY(100px);
+}
+
 * {
 	box-sizing: border-box;
 }
