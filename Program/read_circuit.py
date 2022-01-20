@@ -5,7 +5,7 @@ import circuits
 
 
 class Circuit:
-    def __init__(self, path="", string="", save_to=""):
+    def __init__(self, path="", string="", save_to="", bg=0xbbbbbb):
         file_str = ""
 
         if path != "":
@@ -63,7 +63,8 @@ class Circuit:
                 else:
                     elements_dict[elem_key][1].add_child(circuits.Element(child_name, "r"))
 
-        elements_dict[root_name][1].draw_as_root(save_to=save_to)
+        print(bg)
+        elements_dict[root_name][1].draw_as_root(save_to=save_to, bg=bg)
         for i in range(10):
             elements_dict[root_name][1].compute()
 

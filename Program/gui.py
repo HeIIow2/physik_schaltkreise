@@ -9,7 +9,8 @@ class InputFrame:
     def __init__(self, root):
         self.root = root
         self.fg_color = '#fff'
-        self.bg_color = '#bbb'
+        # must be fully written out (6 digits instead of 3) due to the later conversion to an hex value
+        self.bg_color = '#bbbbbb'
 
         self.root.config(bg=self.bg_color)
 
@@ -56,12 +57,13 @@ class InputFrame:
         self.text.delete('1.0', tk.END)
         self.text.insert(tk.END, self.string)
 
+
     def calculate(self):
         print(self.root.winfo_width(), self.root.winfo_height())
 
         save_to_str = self.file_name.split("/")[-1].split(".")[0]
 
-        circuit = read_circuit.Circuit(string=self.string, save_to=save_to_str)
+        circuit = read_circuit.Circuit(string=self.string, save_to=save_to_str, bg=int(self.bg_color.replace('#', '0x'), 16))
 
         img = Image.open(f'graphics/png/{save_to_str}.png')
 

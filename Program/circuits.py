@@ -32,12 +32,15 @@ Iges = I1 + I2 ...
 Imperativ verschachtelte Programmierung
 '''
 
-import matplotlib.backends.backend_tkagg
-import matplotlib
-matplotlib.use('Agg')
 import schemdraw
 import schemdraw.elements as elm
+from pathlib import Path
 
+import os
+os.environ['path'] += r';C:\Program Files\UniConvertor-2.0rc5\dlls'
+import cairosvg
+
+schemdraw.use('svg')
 
 class Element:
     def __init__(self, name: str, type_str: str, resistance=-1.0, voltage=-1.0, current=-1.0):
@@ -300,7 +303,7 @@ class Element:
 
             return max_steps, latest_elem_r, current_height
 
-    def draw_as_root(self, save_to=""):
+    def draw_as_root(self, save_to="", bg=0xbbbbbb):
         d = schemdraw.Drawing()
 
         d += (latest_elem := elm.SourceV().up().label(self.name))
@@ -311,12 +314,17 @@ class Element:
         for i in range(steps):
             d += (latest_elem := elm.Line().left().at(latest_elem.end))
 
-        d.draw()
         if save_to == "":
             d.save('schematic.svg')
+            cairosvg.svg2png(url='schematic.svg', write_to='schematic.png')
         else:
-            d.save(f"graphics/png/{save_to}.png", dpi=300)
+            try:
+                os.makedirs("graphics/png")
+            except FileExistsError:
+                pass
             d.save(f"graphics/{save_to}.svg")
+            cairosvg.svg2png(url=f"graphics/{save_to}.svg", write_to=f"graphics/png/{save_to}.png")
+
 
 
 '''
