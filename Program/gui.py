@@ -17,7 +17,6 @@ class InputFrame:
         self.string = ""
         self.file_name = os.getcwd()
 
-        # Eingabe
         self.open_file_dialog_button = tk.Button(self.root, text=self.file_name, command=self.file_dialog, bg=self.fg_color)
         self.open_file_dialog_button.grid(row=0, column=0, sticky="NSEW", padx=5, pady=5)
 
@@ -62,6 +61,12 @@ class InputFrame:
         print(self.root.winfo_width(), self.root.winfo_height())
 
         save_to_str = self.file_name.split("/")[-1].split(".")[0]
+        if "\\" in save_to_str:
+            save_to_str = "custom_circuit"
+        print(save_to_str)
+
+        self.string = self.text.get("1.0", 'end').rstrip("\n")
+        print(self.string)
 
         circuit = read_circuit.Circuit(string=self.string, save_to=save_to_str, bg=int(self.bg_color.replace('#', '0x'), 16))
 
