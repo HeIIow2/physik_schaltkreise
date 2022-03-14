@@ -1,0 +1,7 @@
+Formeln für:
+Ohmsches Gesetzt
+Maschenregel
+Knotenregel
+Parrallelschaltung
+Reihenschaltung
+
