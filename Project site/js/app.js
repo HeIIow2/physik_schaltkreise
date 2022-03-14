@@ -23,7 +23,8 @@ const colors = {
 	
 	"--accent-color": ["#5b8c80", "#5b8c80"],
 	"--shadow-1dp": ["0 0 10px black", "0 0 0 2px var(--accent-color)"],
-	"--shadow-2dp": ["0 0 20px black", "0 0 0 2px var(--accent-color)"]
+	"--shadow-2dp": ["0 0 20px black", "0 0 0 2px var(--accent-color)"],
+	"--negation": ["invert(1)", "None"]
 }
 const properties = Object.keys(colors);
 

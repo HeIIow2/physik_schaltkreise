@@ -12,6 +12,7 @@
 	
 	--shadow-1dp: 0 0 10px black;
 	--shadow-2dp: 0 0 20px black;
+	--negation: invert(1);
 }
 
 html body {
@@ -166,6 +167,18 @@ header button:active {
 	color: var(--main-text-color);
 }
 
+.textbox h2 {
+	color: var(--main-text-color);
+}
+
+.textbox h3 {
+	color: var(--secondary-text-color);
+}
+
+.textbox h4 {
+	color: var(--secondary-text-color);
+}
+
 .textbox p {
 	color: var(--main-text-color);
 	float: none;
@@ -225,4 +238,9 @@ header button:active {
 }
 .textbox div pre {
 	flex-grow: 2;
+}
+
+.negated {
+	-webkit-filter: var(--negation);
+	filter: var(--negation);
 }
