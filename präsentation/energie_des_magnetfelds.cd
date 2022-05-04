@@ -1,0 +1,12 @@
+// Zu Aufschrieb: Energie des Magnetfeldes W_mag
+
+R12, P
+R1
+R2
+	U: 20
+
+R1, R
+	R: 10
+
+R2, R
+	R: 10
