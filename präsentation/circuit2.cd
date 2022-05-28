@@ -1,0 +1,43 @@
+Rges, S
+R123456789
+RA
+RBCDEF
+
+R123456789, P
+    U: 10
+    R: 3
+R1234
+R5
+R6
+R789
+
+R1234, S
+    I: 5
+R1
+R2
+R34
+
+R34, P
+R3
+R4
+
+R789, S
+R78
+R9
+
+R78, P
+R7
+R8
+
+RBCDEF, P
+RB
+RCDE
+RF
+
+RCDE, S
+RC
+RDE
+
+RDE, P
+RD
+RE

@@ -1,7 +1,17 @@
 Formeln für:
-Ohmsches Gesetzt
-Maschenregel
-Knotenregel
-Parrallelschaltung
-Reihenschaltung
+Ohmsches Gesetzt: U = R * I
+Maschenregel: 
+Masche -> Reihenschaltung -> geschlossener Stromkreis ohne verzweigungen
+Uges = U1 + U2 + U3 ...
+Iges = I1 = I2 + I3
 
+Knotenregel:
+Knoten -> Parrallelschaltung
+Uges = U1 + U2 + U3
+Iges = I1 + I2 + I3
+
+Parrallelschaltung:
+1/Rges = 1/R1 + 1/R2 + 1/R3
+
+Reihenschaltung:
+Rges = R1 + R2 + R3
